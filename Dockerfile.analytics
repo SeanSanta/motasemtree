@@ -1,0 +1,17 @@
+# Use an official Python runtime as a parent image
+FROM python:3.8
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+ADD . /app
+
+# Install any needed packages
+RUN pip install pymongo
+
+# Make port 5003 available to the world outside this container
+EXPOSE 5003
+
+# Run the analytics service when the container launches
+CMD ["python", "analytics_service.py"]
