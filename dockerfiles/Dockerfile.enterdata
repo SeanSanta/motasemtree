@@ -4,8 +4,11 @@ FROM python:3.8
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-ADD . /app
+# Copy the enter_data.py file into the container
+COPY app/enter_data.py .
+
+# Copy the requirements.txt file into the container
+COPY app/requirements.txt .
 
 # Install Flask and any other needed packages
 RUN pip install Flask

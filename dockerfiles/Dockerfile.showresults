@@ -5,7 +5,10 @@ FROM node:14
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-ADD . /app
+COPY app/show_results.js .
+
+# Copy the requirements.txt file into the container
+COPY app/requirements.txt .
 
 # Install any needed packages
 RUN npm install
