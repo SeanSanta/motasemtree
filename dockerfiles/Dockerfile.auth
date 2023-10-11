@@ -5,10 +5,7 @@ FROM python:3.8
 WORKDIR /app
 
 # Copy only the auth_service.py file from the 'app' directory into the container at /app
-COPY app/auth_service.py .
-
-# Copy the requirements.txt file
-COPY app/requirements.txt .
+COPY . /app
 
 # Install Flask and any other needed packages
 RUN pip install Flask
