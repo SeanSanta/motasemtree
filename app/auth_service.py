@@ -21,7 +21,7 @@ mysql = MySQL(app)
 def login():
     # Output error message:
     msg = "Error, I don't even know if this will output, but if it does pog"
-    return render_template('index.html', msg='woo')
+    return render_template('index.html', msg='Log in to our crazy cool application!')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
