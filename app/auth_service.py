@@ -4,6 +4,8 @@ import MySQLdb.cursors
 import MySQLdb.cursors, re, hashlib
 
 app = Flask(__name__)
+# This line tells Flask where your static files are located
+app.config['STATIC_FOLDER'] = 'static'  
 
 # database connection details
 app.config['MYSQL_HOST'] = 'localhost'
