@@ -5,9 +5,7 @@ FROM python:3.8
 WORKDIR /app
 
 # # Copy only the analytics_service.py file from the 'app' directory into the container at /app
-COPY app/analytics_service.py .
-
-COPY app/requirements.txt .
+COPY . /app
 
 # Install any needed packages
 RUN pip install pymongo
