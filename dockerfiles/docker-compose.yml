@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile.enterdata
     ports:
       - "5000:5000"
+    networks:
+      - micro
 
   show_results:
     build:
@@ -14,6 +16,8 @@ services:
       dockerfile: Dockerfile.showresults
     ports:
       - "5001:5001"
+    networks:
+      - micro
 
   auth_service:
     build:
@@ -21,6 +25,8 @@ services:
       dockerfile: Dockerfile.auth
     ports:
       - "5002:5002"
+    networks:
+      - micro
 
   analytics:
     build:
@@ -28,6 +34,8 @@ services:
       dockerfile: Dockerfile.analytics
     ports:
       - "5003:5003"
+    networks:
+      - micro
 
   mysql_db:
     image: mysql:latest
@@ -36,8 +44,20 @@ services:
       MYSQL_DATABASE: data_db
       MYSQL_USER: data_user
       MYSQL_PASSWORD: data_password
+    networks:
+      - micro
 
   mongo_db:
     image: mongo:latest
+    container_name: mongo_container
     ports:
       - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: rootadmin
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    networks:
+      - micro
+
+networks:
+  micro:
+    driver: bridge
