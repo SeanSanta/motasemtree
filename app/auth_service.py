@@ -15,7 +15,7 @@ app.config['MYSQL_DB'] = 'data_db'
 mysql = MySQL(app)
 
 # http://localhost:5002/pythonlogin/ - the following will be our login page, which will use both GET and POST requests
-@app.route('/app/', method=['GET', 'POST'])
+@app.route('/app', methods=['GET', 'POST'])
 def login():
     # Output error message:
     msg = "Error, I don't even know if this will output, but if it does pog"
