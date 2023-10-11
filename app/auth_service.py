@@ -20,3 +20,6 @@ def login():
     # Output error message:
     msg = "Error, I don't even know if this will output, but if it does pog"
     return render_template('index.html', msg='woo')
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5002)
