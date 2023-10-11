@@ -12,6 +12,7 @@ COPY app/requirements.txt .
 
 # Install Flask and any other needed packages
 RUN pip install Flask
+RUN pip install flask_mysqldb
 
 # Make port 5002 available to the world outside this container
 EXPOSE 5002
